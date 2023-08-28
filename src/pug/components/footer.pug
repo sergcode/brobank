@@ -1,0 +1,32 @@
+footer.footer(role='contentinfo')
+  .container
+    .row.row__flex-nowrap.justify-content_space-between
+      .footer__copyright
+        a(href='/' title='')
+          img(src='./assets/img/logo.svg' alt='Логотип Бробанк')
+        span
+          | ©&nbsp;2014-
+
+          script.
+            let mdate = new Date();
+            document.write(mdate.getFullYear());
+
+          span &nbsp;Сервис подбора финансовых услуг Brobank.ru, официальный сайт.
+
+      .footer__logos
+        a(href='' title='')
+          +svg('vk_logo')
+
+        a(href='' title='')
+          +svg('telegram_logo')
+
+        a(href='' title='')
+          +svg('dzen_logo')
+
+        a(href='' title='')
+          +svg('odnoklassniki_logo')
+
+        a(href='' title='')
+          +svg('youtube_logo')
+
+

@@ -1,0 +1,15 @@
+extends pug/base
+
+prepend vars
+  - title = 'Главная'
+
+append vars
+  //-
+
+block content
+  include pug/data
+  include pug/components/header
+  include pug/pages/home
+  include pug/components/footer
+
+  //- include pug/components/analytics

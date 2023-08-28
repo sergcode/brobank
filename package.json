@@ -1,0 +1,50 @@
+{
+  "name": "employcity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.7.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-cheerio": "^1.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-debug": "^3.2.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^1.1.4",
+    "gulp-resolve-url": "0.0.2",
+    "gulp-sass": "^5.1.0",
+    "gulp-sequence": "^1.0.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-svg-sprite": "^2.0.3",
+    "gulp-svgmin": "^4.1.0",
+    "imagemin-jpeg-recompress": "^7.0.0",
+    "prettier": "^2.8.8",
+    "pug": "^3.0.0",
+    "sass": "^1.63.4",
+    "sass-module-importer": "^1.4.0",
+    "uglifyjs-webpack-plugin": "^1.2.0",
+    "webpack": "^3.11.0",
+    "webpack-stream": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Sergei Shakhvorostov",
+  "license": "ISC",
+  "repository": "",
+  "private": true
+}

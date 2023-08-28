@@ -1,0 +1,155 @@
+.cover-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  position: relative;
+  display: block;
+  max-width: 1240px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width: 1330px) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  @media screen and (max-width: 1280px) {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  &__customized {
+
+    @media screen and (min-width: 0px) {
+      max-width: 100%;
+    }
+
+    @media screen and (min-width: 576px) {
+      max-width: 510px;
+    }
+
+    @media screen and (min-width: 768px) {
+      max-width: 764px;
+    }
+
+    @media screen and (min-width: 992px) {
+      max-width: 908px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      max-width: 1020px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      max-width: 1220px;
+    }
+
+    @media screen and (min-width: 1600px) {
+      max-width: 1540px;
+    }
+
+    &_fluid {
+      max-width: 1920px;
+    }
+  }
+
+  &__owl-carousel_padding-left-right {
+    max-width: 1314px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-3rem * .5);
+  margin-left: calc(-3rem * .5);
+
+  & > * {
+    max-width: 100%;
+    padding-right: calc(3rem * .5);
+    padding-left: calc(3rem * .5);
+  }
+
+  &-cols {
+    &-1 {
+      & > * {
+        flex: 0 0 auto;
+        width: 100%;
+      }
+    }
+
+    &-sm-2 {
+      & > * {
+        @media screen and (min-width: $middle_smart) {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+      }
+    }
+
+    &-md-2 {
+      & > * {
+        @media screen and (min-width: $tablet-width) {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+      }
+    }
+
+    &-lg-4 {
+      & > * {
+        @media screen and (min-width: $middle-tablet_width) {
+          flex: 0 0 auto;
+          width: 25%;
+        }
+      }
+    }
+
+    &-lg-5 {
+      & > * {
+        @media screen and (min-width: $middle-tablet_width) {
+          flex: 0 0 auto;
+          width: 20%;
+        }
+      }
+    }
+  }
+
+  &__flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &_height-50 {
+    height: 50%;
+  }
+
+  &__width-100 {
+    width: 100%;
+  }
+}
+
+[class*="__col-"] {
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+[class$="__col"] {
+  display: flex;
+  position: relative;
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+

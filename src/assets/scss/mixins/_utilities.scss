@@ -1,0 +1,49 @@
+.d-flex {
+  display: flex !important;
+}
+.align-items {
+  &-md-stretch {
+    @media screen and (min-width: $tablet-width) {
+      align-items: stretch !important;
+    }
+  }
+
+  &-lg-center {
+    @media screen and (min-width: $middle-tablet_width) {
+      align-items: center !important;
+    }
+  }
+
+  &-start {
+    align-items: flex-start !important;
+  }
+}
+
+.justify-content {
+  &_center {
+    justify-content: center;
+  }
+
+  &_space-between {
+    justify-content: space-between;
+  }
+}
+
+@mixin order-first($sequence-number: -1) {
+  &.order-first {
+    order: $sequence-number !important;
+  }
+}
+
+@mixin order($sequence-number: 1) {
+  &.order-#{$sequence-number} {
+    order: $sequence-number !important;
+  }
+}
+
+@mixin order-last($sequence-number: 6) {
+  &.order-last {
+    order: $sequence-number !important;
+  }
+}
+
