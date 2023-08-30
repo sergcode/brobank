@@ -1,0 +1,8 @@
+- var numberItemsList = []
+
+mixin list(title, numberItemsList)
+	ul
+		h3= title
+		each text in numberItemsList
+			li
+				a.text_middle.text_w-400(href='' title='' role='link')= text

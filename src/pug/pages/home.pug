@@ -1,39 +1,305 @@
-main.main(class=modifierClass role='main')
-  section.main.main__first-screen(role='region')
-    .container
-      .main.main__block-title
-        h1.text_uppercase
-          span.text_blue Lorem ipsum&nbsp;
-          | dolor sit
-          br
-          | amet consectetur
-          br
-          span.text_blue adipiscing
+main.home(role='main')
+  .container
+    section.bank-assistance
+      .row.row_flex-nowrap.justify-content_space-between
+        h2 Помощь банков
+        .bank-assistance__button
+          button.button.button_gray(type='button' role='button') Показать все
 
-      .main.main__block-text.main__block-text_mb-80
-        h4.title_h4 At vero eos et accusamus et iusto odio dignissimos ducimus!
-        ul.text_big
-          li Totam rem aperiam eaque ipsa
-          li Sit voluptatem accusantium doloremque laudantium
-          li Sed ut perspiciatis, unde omnis iste natus error
+      .row.row_flex-nowrap.row_stretch.row-cols-lg-2.justify-content_space-between
+        +article-button(
+          'bank-assistance/tinkofbank.svg',
+          'Тинькофф Банк',
+          'star',
+          '3.3',
+          '138 отзывов',
+          'Задать вопрос',
+          ['bank-assistance__wrap-logo', 'bank-assistance__tinkofbank', 'text_center', 'border']
+        )
+        +article-button(
+          'bank-assistance/sberbank.svg',
+          'Сбербанк',
+          'star',
+          '3.3',
+          '138 отзывов',
+          'Задать вопрос',
+          ['bank-assistance__wrap-logo', 'bank-assistance__sberbank', 'text_center', 'border']
+        )
+        +article-button(
+          'bank-assistance/alfabank.svg',
+          'Альфа-Банк',
+          'star',
+          '3.3',
+          '138 отзывов',
+          'Задать вопрос',
+          ['bank-assistance__wrap-logo', 'bank-assistance__alfabank', 'text_center', 'border']
+        )
+        +article-button(
+          'bank-assistance/mtsbank.svg',
+          'МТС Банк',
+          'star',
+          '3.3',
+          '138 отзывов',
+          'Задать вопрос',
+          ['bank-assistance__wrap-logo', 'bank-assistance__mtsbank', 'text_center', 'border']
+        )
+        +article-button(
+          'bank-assistance/gazprombank.svg',
+          'Газпромбанк',
+          'star',
+          '3.3',
+          '138 отзывов',
+          'Задать вопрос',
+          ['bank-assistance__wrap-logo', 'bank-assistance__gazprombank', 'text_center', 'border']
+        )
+        +article-button(
+          'bank-assistance/rosbank.svg',
+          'Росбанк',
+          'star',
+          '3.3',
+          '138 отзывов',
+          'Задать вопрос',
+          ['bank-assistance__wrap-logo', 'bank-assistance__rosbank', 'text_center', 'border']
+        )
 
-      .main.main__button-group
-        button.button.button_small.button_blue(type='button' role='button') Заказать
-        button.button.button_small.button_white(type='button' role='button') Подробнее
 
-  section.main.main__two-screen(role='region')
-    .container
-      .main.main__block-title.main__block-title_center
-        h2.text_uppercase.text_white Оформление&nbsp;&nbsp;
-          span.text_blue Заказа
+    section.our-experts
+      .row.row_flex-nowrap.justify-content_space-between
+        h2 Наши эксперты
+        .our-experts__button
+          button.button.button_gray(type='button' role='button') Показать все
 
-        h3.text_gray Перед заполнением формы ознакомьтесь с нашей схемой работы!
+      .row.row_flex-nowrap.row_stretch.row-cols-lg-2.justify-content_space-between
+        +article(
+          'our-experts/img_profil.png',
+          'Трескова Клавдия',
+          'Главный редактор',
+          ['text_center', 'border']
+        )
+        +article(
+          'our-experts/img_profil-0.png',
+          'Пихоцкая Ольга',
+          'Главный журналист',
+          ['text_center', 'border']
+        )
+        +article(
+          'our-experts/img_profil-1.png',
+          'Исаев Юрий',
+          'Финансовый аналитик',
+          ['text_center', 'border']
+        )
+        +article(
+          'our-experts/img_profil-2.png',
+          'Русанова Ирина',
+          'Финансовый эксперт',
+          ['text_center', 'border']
+        )
+        +article(
+          'our-experts/img_profil-3.png',
+          'Кокош Елена',
+          'Финансовый эксперт',
+          ['text_center', 'border']
+        )
+        +article(
+          'our-experts/img_profil-4.png',
+          'Попович Анна',
+          'Специалист поддержки',
+          ['text_center', 'border']
+        )
 
-      .main.main__block-group
-        .row.row-cols-lg-5.justify-content_center
-          .main.main__col
-            article(role='article')
-              .main.main__col__icon
+
+    section.about-our-service
+      h2 О нашем сервисе
+
+      .row.row-cols-lg-4.justify-content_space-between
+        .col
+          +article(
+            'about-our-service/img-advantages-1.png',
+            'Бробанк - не банк',
+            'Мы не выдаем кредиты и карты. Данный сервис создан чтобы помочь вам найти и сравнить самые выгодные условия по финансовым продуктам банков.'
+          )
+
+        .col
+          +article(
+            'about-our-service/img-advantages-2.png',
+            'Независимый сервис сравнения',
+            'Мы не принадлежим ни одному банку, полностью свободны и представляем честное мнение для наших посетителей. Наш контент объективен и непредвзят.'
+          )
+
+        .col
+          +article(
+            'about-our-service/img-advantages-3.png',
+            'Бесплатное использование',
+            'Мы не берем с вас денег за свои услуги, вся информация бесплатна. Бробанк это рекламно-поддерживаемый сервис с партнерскими ссылками.'
+          )
+
+      .row.row-cols-lg-3.row_pt-36.justify-content_space-between
+        .col
+          .about-our-service__wrap.text_w-400
+            p.text_huge 320+
+            p.text_middle Банков с лицензией ЦБ РФ
+
+        .col
+          .about-our-service__wrap.text_w-400
+            p.text_huge 1000+
+            p.text_middle Предложений в каталоге
+
+        .col
+          .about-our-service__wrap.text_w-400
+            p.text_huge 2 млн.
+            p.text_middle Пользователей в месяц
+
+        .col
+          .about-our-service__wrap.text_w-400
+            p.text_huge +100500
+            p.text_middle Придумаем какой-то текст
+
+      .about-our-service__text
+        p.text_middle.text_w-400 Здесь вы найдете полную информацию о кредитном рынке, о действующих банковских предложениях и МФО. Можно сделать подбор кредитного продукта по банкам, провести предварительные расчеты и сразу подать онлайн-заявку на ее получение. Наша команда — специалисты с юридическим и финансовым образованием. Мы наполняем сервис качественной и актуальной информацией. Внимательно следим за изменениями рынка и новостями. Предоставляем информацию только по честным банкам, имеющим лицензию ЦБ РФ, которые работают в полном соответствии с действующим законодательством.
+
+    section.ready-made-solutions(role='region')
+      h2 Готовые решения
+
+      .row.row-cols-lg-5.justify-content_space-between
+        +list(
+          'Кредитные карты',
+          ['Кредитные карты без отказа',
+            'Лучшие кредитные карты',
+            'Для снятия наличных',
+            'С плохой кредитной историей',
+            'С доставкой на дом',
+            'Виртуальные кредитные карты',
+            'Кредитные карты в Москве',
+            'Кредитные карты онлайн'
+          ]
+        )
+
+        +list(
+          'Дебетовые карты',
+          [
+            'Лучшие дебетовые карты',
+            'С бесплатным обслуживанием',
+            'Дебетовые карты с кэшбэком',
+            'Моментальные',
+            'С процентом на остаток',
+            'Виртуальные дебетовые карты',
+            'С доставкой на дом',
+            'Дебетовые карты для детей'
+          ]
+        )
+
+        +list(
+          'Карты рассрочки',
+          [
+            'Лучшие карты рассрочки',
+            'Карты рассрочки без отказа',
+            'Карты с рассрочкой 24 месяца',
+            'Карты с рассрочкой 12 месяцев',
+            'Со снятием наличных',
+            'Карты рассрочки без процентов',
+            'Карты рассрочки с 18 лет',
+            'С доставкой на дом'
+          ]
+        )
+
+        +list(
+          'Кредиты наличными',
+          [
+            'Кредит наличными на карту',
+            'Онлайн кредит наличными',
+            'С плохой кредитной историей',
+            'Кредит наличными без отказа',
+            'Кредит наличными без работы',
+            'Кредит наличными без справок',
+            'Кредит наличными по паспорту',
+            'Кредит под низкий процент'
+          ]
+        )
+
+        +list(
+          'Автокредиты',
+          [
+            'Лучшие автокредиты',
+            'Автокредит с плохой КИ',
+            'Автокредит без перв. взноса',
+            'Автокредит онлайн',
+            'Автокредит без справок',
+            'По двум документам',
+            'На подержанный авто',
+            'Автокредит под залог'
+          ]
+        )
+
+        +list(
+          'Рефинансирование',
+          [
+            'Лучшие предложения',
+            'Под низкий процент',
+            'Рефинансирование с плохой КИ',
+            'Без подтверждения дохода',
+            'С просрочкой',
+            'Рефинансирование для физлиц',
+            'Рефинансирование кредиток',
+            'Рефинансирование займов'
+          ]
+        )
+
+        +list(
+          'Займы',
+          [
+            'Первый займ без процентов',
+            'Лучшие займы',
+            'Займы онлайн',
+            'Займы с плохой КИ на карту',
+            'Займы без отказа',
+            'Срочные займы',
+            'Займы по паспорту',
+            'Займы наличными'
+          ]
+        )
+
+        +list(
+          'Расчетные счета',
+          [
+            'РКО для ИП',
+            'РКО онлайн',
+            'РКО для ООО',
+            'Бесплатное РКО',
+            'Лучшее РКО',
+            'РКО с быстрым открытием',
+            'РКО для бизнеса',
+            'РКО для самозанятых'
+          ]
+        )
+
+        +list(
+          'Ипотека',
+          [
+            'Без первоначального взноса',
+            'Самая выгодная ипотека',
+            'Ипотека на вторичное жилье',
+            'Сельская ипотека',
+            'На строительство дома',
+            'Ипотека для молодой семьи',
+            'С плохой кредитной историей',
+            'Ипотека с господдержкой'
+          ]
+        )
+
+        +list(
+          'Вклады',
+          [
+            'Рейтинг вкладов',
+            'Вклады для пенсионеров',
+            'Накопительные счета',
+            'Вклады в Санкт-Петербурге',
+            'Вклады в Москве',
+            'Вклады в долларах',
+            'Вклады с пополнением',
+            'Валютные вклады'
+          ]
+        )
+
 
 
 

@@ -1,0 +1,18 @@
+mixin article-button(pathImg, title, svgStar, rating, numberReviews, button, classModifiers)
+	article.article
+		figure&attributes({'class' : classModifiers})
+			.article.article__img
+				img(src=`${baseDir}assets/img/${pathImg}` alt='')
+
+			figcaption
+				.article__text
+					h4=title
+					p.text_middle.text_w-400
+						+svg(svgStar)
+						span.text_small.text_w-400=rating
+						a.text_small.text_w-400(href='' title='')= numberReviews
+
+				if button
+					.article__button
+						button.button.button_gray(type='button' role='button') Задать вопрос
+

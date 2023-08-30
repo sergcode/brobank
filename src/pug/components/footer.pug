@@ -1,11 +1,12 @@
 footer.footer(role='contentinfo')
   .container
-    .row.row__flex-nowrap.justify-content_space-between
+    .row.row_flex-nowrap.justify-content_space-between.row_pb-24
       .footer__copyright
-        a(href='/' title='')
+        a(href='/' title='' role='link')
           img(src='./assets/img/logo.svg' alt='Логотип Бробанк')
-        span
-          | ©&nbsp;2014-
+
+        span.text_small.text_w-400
+          | ©&nbsp;2014 -
 
           script.
             let mdate = new Date();
@@ -28,5 +29,58 @@ footer.footer(role='contentinfo')
 
         a(href='' title='')
           +svg('youtube_logo')
+
+
+    .footer__menu.footer_b-top-1
+      .row.row-cols-lg-3.row_flex-nowrap.justify-content_space-between.row_pt-32.row_pb-32.text_middle.text_w-400
+        ul
+          li
+            a(href='' title='' role='link') О сервисе
+          li
+            a(href='' title='' role='link') Контакты
+        ul
+          li
+            a(href='' title='' role='link') СМИ о нас
+          li
+            a(href='' title='' role='link') Отзывы о нас
+          li
+            a(href='' title='' role='link') Вакансии
+        ul
+          li
+            a(href='' title='' role='link') Редакция
+          li
+            a(href='' title='' role='link') Редакционная политика
+        ul
+          li
+            a(href='' title='' role='link') Как мы зарабатываем
+          li
+            a(href='' title='' role='link') Карта сайта
+
+    .footer__contscts.footer_b-top-1
+      ul.row.row-cols-lg-3.row_flex-nowrap.justify-content_space-between.row_pt-32.row_pb-32.text_middle.text_w-400
+        li
+          a(href='mailto:support@brobank.ru' title='Обратная связь' role='link')
+            +svg('mail')
+            | support@brobank.ru
+        li
+          a(href='tel:88003004383' title='Позвонить на горячую линию' role='link')
+            +svg('call')
+            | 8 800 300-43-83
+        li
+          +svg('geo')
+          | г.Кемерово, ул.Терешковой, 18А
+        li
+          +svg('time')
+          | Круглосуточно
+
+    .footer__info.footer_b-top-1.row_pt-32
+      p Мы используем файлы cookie, чтобы предоставить пользователям больше возможностей при посещении сайта Бробанк.ру.
+      p Сервис не занимается деятельностью по предоставлению банковских услуг и выдаче займов. Содержание сайта не является рекомендацией или офертой, вся информация носит ознакомительный характер. При использовании материалов гиперссылка на Brobank.ru обязательна.
+      p ИП Ярошевский Д.И. ИНН: 423082922740. ОГРНИП: 318420500081301. Свидетельство на товарный знак № 779639 от 15.10.2020.
+
+    .footer__privacy-policy
+      a(href='' title='' role='link') Политика конфиденциальности
+      a(href='' title='' role='link') Пользовательское соглашение
+      a(href='' title='' role='link') Условия использования
 
 

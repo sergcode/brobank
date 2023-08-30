@@ -1,0 +1,7 @@
+.ready-made-solutions {
+  ul {
+    &:nth-child(n + 5) {
+      margin-top: 32px;
+    }
+  }
+}

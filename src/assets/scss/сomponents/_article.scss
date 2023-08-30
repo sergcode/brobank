@@ -1,0 +1,33 @@
+.article {
+  width: 100%;
+
+  &__img {
+    margin-bottom: 16px;
+    border-radius: 8px;
+
+    img {
+      width: max-content;
+      height: max-content;
+    }
+  }
+
+  &__text {
+    padding-bottom: 12px;
+
+    .star {
+      margin-right: 4px;
+    }
+
+    span {
+      padding-right: 8px;
+    }
+
+    a {
+      color: $blue-three;
+    }
+  }
+
+  &__button {
+
+  }
+}

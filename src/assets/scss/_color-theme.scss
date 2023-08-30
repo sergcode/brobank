@@ -6,7 +6,7 @@ $white-default: #fff; // section journal bg
 
 // Black
 $black-default: #3D3D3D; // text
-//$black-one: #10101D;
+$black-one: #000;
 //$black-two: #6F6D7B;
 //$black-three: #2A2B30;
 //$black-four: #3D4050;
@@ -18,8 +18,8 @@ $gray-one: #898E93; // text
 $gray-two: #E0E4E9; // input border
 $gray-three: #F1F4F7; // section journal border block, bg button
 $gray-four: #A5A9AD; // BASE-06 section news small text
-//$gray-five: #C9C9C9;
-//$gray-six: #F3F3F3;
+$gray-five: #CFD4D9; // BASE-04
+$gray-six: #e6e9ec;
 //$gray-seven: #dee2e6;
 //$gray-eight: #BBBBBB;
 //$gray-nine: #C3C3C3;
@@ -29,20 +29,29 @@ $yellow-default: #FEDD2E; // button
 $yellow-one: #F1D22A; // button hover
 $yellow-two: #E0C11C; // button active
 $yellow-three: #FBF4DA; // card background
+$yellow-four: #FDDE42; // Тинькофф
 
 // Blue
 $blue-default: #F1F4F7; // BASE - 02 body background
 $blue-one: #F6F7FB; // card background
 $blue-two: #E9EFF5; // card background
-$blue-three: #336FEE; // section Лучшие предложения text
+$blue-three: #336FEE; // BASE/accent section Лучшие предложения text
 $blue-four: #275ED2; // наверное hover для ссылки отзывы
 $blue-five: #2150B4; // наверное active для ссылки отзывы
+$blue-six: #0077ff; // Цвет Вконтакте
+$blue-seven: #28a8e9; // Цвет Телеграм
+$blue-eight: #266DC2; // Цвет Газпромбанк
 
 // Green
 $green-default: #34B41F; // text
 
 // Red
 $red-default: #E03C25; // text
+$red-one: #ff0200; // Цвет Youtube
+$red-two: #EF3124; // Цвет Альфа-Банк
+
+// Orange
+$orange-one: #ff7800;
 
 // White-rgba
 //$white-rgba-one: rgba(255, 255, 255, .3);

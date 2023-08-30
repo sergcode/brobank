@@ -1,6 +1,5 @@
 .footer {
   width: 100%;
-  height: 80px;
   padding-top: 30px;
   padding-bottom: 30px;
 
@@ -17,26 +16,12 @@
 
     span {
       text-align: center;
-      font-size: 13px;
-      font-weight: 400;
-      color: $gray-four;
+      vertical-align: middle;
+    }
 
-      svg {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-        vertical-align: middle;
-        fill: $blue-two;
-      }
-
-      a {
-        font-size: 13px;
-        color: $gray-four;
-
-        svg {
-
-        }
-      }
+    img {
+      margin-right: 16px;
+      vertical-align: middle;
     }
 
     &_text {
@@ -56,35 +41,153 @@
 
   &__logos {
     a {
+      &:not(:first-child) {
+        padding-left: 12px;
+      }
+
+      &:not(:last-child) {
+        padding-right: 12px;
+      }
+
       svg {
+        vertical-align: middle;
         fill: $gray-four;
+        transition: 0.2s ease;
 
         &.vk_logo {
           width: 24px;
           height: 14px;
+
+          &:hover {
+            fill: $blue-six;
+          }
         }
 
         &.telegram_logo {
           width: 21px;
           height: 17.54px;
+
+          &:hover {
+            fill: $blue-seven;
+          }
         }
 
         &.dzen_logo {
           width: 20px;
           height: 20px;
+
+          &:hover {
+            fill: $black-one;
+          }
         }
 
         &.odnoklassniki_logo {
-          width: 12px;
-          height: 22px;
+          width: 24px;
+          height: 24px;
+
+          &:hover {
+            fill: $orange-one;
+          }
         }
 
         &.youtube_logo {
           width: 21px;
           height: 14.9px;
+
+          &:hover {
+            fill: $red-one;
+          }
         }
       }
     }
+  }
+
+  &__menu {
+    & .text {
+      &_middle {
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  &__contscts {
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        align-content: center;
+
+        a {
+          display: flex;
+          align-items: center;
+          align-content: center;
+          font-size: 16px;
+
+          &:hover {
+            text-decoration: underline;
+            color: $blue-three;
+          }
+
+          svg {
+            height: 12px;
+
+            &.mail {
+              width: 14.67px;
+            }
+
+            &.call {
+              width: 15.26px;
+            }
+          }
+        }
+
+        svg {
+          height: 12px;
+          margin-right: 8.67px;
+
+          &.geo {
+            width: 13.33px;
+          }
+
+          &.time {
+            width: 14.67px;
+          }
+        }
+      }
+    }
+  }
+
+  &__info p, .footer__privacy-policy a {
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  &__info p {
+    &:not(:first-child) {
+      padding-top: 12px;
+    }
+  }
+
+  .footer__privacy-policy {
+    padding-top: 12px;
+
+    a {
+      color: $blue-three;
+
+      &:not(:first-child) {
+        padding-left: 16px;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &_b-top-1 {
+    border-top: 1px solid $gray-five;
   }
 }
 

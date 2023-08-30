@@ -1,0 +1,57 @@
+.bank-assistance {
+  .article {
+    &:not(:first-child) {
+      padding-left: 10px;
+    }
+
+    &:not(:last-child) {
+      padding-right: 10px;
+    }
+  }
+
+  &__wrap-logo {
+    .article__img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      margin-right: auto;
+      margin-bottom: 12px;
+      margin-left: auto;
+    }
+  }
+
+  &__tinkofbank {
+    .article__img {
+      background-color: $yellow-four;
+    }
+  }
+  &__sberbank {
+    .article__img {
+      background-color: $gray-three;
+    }
+  }
+  &__alfabank {
+    .article__img {
+      background-color: $red-two;
+    }
+  }
+  &__mtsbank {
+    .article__img {
+      background-color: $gray-three;
+    }
+  }
+  &__gazprombank {
+    .article__img {
+      background-color: $blue-eight;
+    }
+  }
+  &__rosbank {
+    .article__img {
+      background-color: $gray-three;
+    }
+  }
+
+
+}

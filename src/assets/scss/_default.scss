@@ -56,9 +56,21 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-  padding-bottom: 24px;
-  font-size: 28px;
-  line-height: 33px;
+  padding-bottom: 32px;
+  font-size: 38px;
+  font-weight: 600;
+}
+
+h3 {
+  padding-bottom: 16px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+h4 {
+  padding-bottom: 12px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .title {
@@ -82,17 +94,15 @@ h2 {
   }
 }
 
-h3 {
-  padding-bottom: 8px;
-  font-size: 16px;
-  line-height: 19px;
-}
-
 a {
   font-size: 14px;
   text-decoration: none;
   color: $black-default;
   letter-spacing: 0.1px;
+
+  &:hover {
+    color: $blue-three;
+  }
 }
 
 
@@ -109,6 +119,16 @@ footer,
 nav,
 article {
   display: block;
+}
+
+section {
+  padding: 40px;
+  border-radius: 12px;
+  background: $white-default;
+
+  &:not(:first-child) {
+    margin-top: 20px;
+  }
 }
 
 input:active,
@@ -129,11 +149,28 @@ ul {
   margin-top: 0;
   margin-bottom: 0;
   list-style: none;
+
+  li {
+    &:not(:first-child) {
+      padding-top: 12px;
+    }
+  }
+
+  h3 {
+    & + li {
+      padding-top: 0 !important;
+    }
+  }
 }
 
 button {
+  width: max-content;
+  height: max-content;
   padding: 0;
   border: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
   background: none;
   cursor: pointer;
 }
@@ -164,6 +201,10 @@ figcaption {
 fieldset {
   border: 0;
   padding: 0;
+}
+
+figure {
+  margin: 0;
 }
 
 a:active, a:focus, a:focus-visible,
@@ -209,4 +250,16 @@ form {
   a {
     font-size: 16px;
   }
+}
+
+.border {
+  padding: 16px 12px;
+  border: 1px solid $gray-three;
+  border-radius: 12px;
+}
+
+.star {
+  width: 16px;
+  height: 15.2px;
+  fill: $yellow-default;
 }

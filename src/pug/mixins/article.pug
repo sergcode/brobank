@@ -1,0 +1,10 @@
+mixin article(pathImg, title, text, classModifiers)
+	article.article
+		figure&attributes({'class' : classModifiers})
+			.article.article__img
+				img(src=`${baseDir}assets/img/${pathImg}` alt='')
+
+			figcaption.article__text
+				h3=title
+				p.text_middle.text_w-400=text
+

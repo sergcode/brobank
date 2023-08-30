@@ -5,20 +5,19 @@
   align-items: center;
 
   &_h2 {
-    padding-bottom: 30px;
-    font-size: 36px;
+    font-size: 38px;
   }
 
   &_h3 {
-    font-size: 18px;
-  }
-
-  &_h4 {
     font-size: 20px;
   }
 
+  &_h4 {
+    font-size: 18px;
+  }
+
   &_h5 {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   &_h6 {
@@ -96,8 +95,32 @@
     text-transform: uppercase;
   }
 
+  &_huge {
+    font-size: 32px;
+  }
+
   &_big {
     font-size: 20px;
+  }
+
+  &_middle {
+    font-size: 16px;
+  }
+
+  &_small {
+    font-size: 13px;
+  }
+
+  &_w-400 {
+    font-weight: 400;
+  }
+
+  &_w-500 {
+    font-weight: 500;
+  }
+
+  &_center {
+    text-align: center;
   }
 }
 

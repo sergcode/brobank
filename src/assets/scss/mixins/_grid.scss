@@ -101,11 +101,20 @@
       }
     }
 
-    &-lg-4 {
+    &-lg-3 {
       & > * {
         @media screen and (min-width: $middle-tablet_width) {
           flex: 0 0 auto;
           width: 25%;
+        }
+      }
+    }
+
+    &-lg-4 {
+      & > * {
+        @media screen and (min-width: $middle-tablet_width) {
+          flex: 0 0 auto;
+          width: 33.333333%;
         }
       }
     }
@@ -120,8 +129,12 @@
     }
   }
 
-  &__flex-nowrap {
+  &_flex-nowrap {
     flex-wrap: nowrap;
+  }
+
+  &_stretch {
+    align-items: stretch;
   }
 
   &_height-50 {
@@ -130,6 +143,22 @@
 
   &__width-100 {
     width: 100%;
+  }
+
+  &_pb-24 {
+    padding-bottom: 24px;
+  }
+
+  &_pt-32 {
+    padding-top: 32px;
+  }
+
+  &_pt-36 {
+    padding-top: 36px;
+  }
+
+  &_pb-32 {
+    padding-bottom: 32px;
   }
 }
 

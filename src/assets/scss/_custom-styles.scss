@@ -1,21 +1,26 @@
 /* Default styles */
-@import './variables';
-@import './fonts';
-@import './color-theme';
-@import './default';
-@import './animation';
+@import 'variables';
+@import 'fonts';
+@import 'color-theme';
+@import 'default';
+@import 'typography';
+@import 'animation';
 
 /* Mixins */
-@import './mixins/grid';
-@import './mixins/utilities';
+@import 'mixins/grid';
+@import 'mixins/utilities';
 
 /* Components */
-@import './сomponents/button';
-@import './сomponents/header';
-@import './сomponents/typography';
-@import './сomponents/footer';
-@import './сomponents/separator';
+@import 'сomponents/button';
+@import 'сomponents/header';
+@import 'сomponents/footer';
+@import 'сomponents/separator';
+@import 'сomponents/article';
 
 /* Main */
-@import './main/main';
+@import 'home/home';
+@import 'ready-made-solutions/ready-made-solutions';
+@import 'about-our-service/about-our-service';
+@import 'our-experts/our-experts';
+@import 'bank-assistance/bank-assistance';
 
