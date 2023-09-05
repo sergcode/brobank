@@ -1,0 +1,26 @@
+.rating-and-reviews {
+  display: flex;
+  align-items: center;
+  align-content: center;
+
+  &_justify-content {
+    &-center {
+      justify-content: center;
+    }
+  }
+
+  .star {
+    width: 16px;
+    height: 15.2px;
+    margin-right: 4px;
+    fill: $yellow-default;
+  }
+
+  span {
+    padding-right: 8px;
+  }
+
+  a {
+    color: $blue-three;
+  }
+}

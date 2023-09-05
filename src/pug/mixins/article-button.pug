@@ -1,16 +1,13 @@
-mixin article-button(pathImg, title, svgStar, rating, numberReviews, button, classModifiers)
+mixin article-button(pathImg, title, rating, numberReviews, button, classModifiers, ratingAndReviewPosition)
 	article.article
 		figure&attributes({'class' : classModifiers})
-			.article.article__img
+			.article__img
 				img(src=`${baseDir}assets/img/${pathImg}` alt='')
 
 			figcaption
 				.article__text
-					h4=title
-					p.text_middle.text_w-400
-						+svg(svgStar)
-						span.text_small.text_w-400=rating
-						a.text_small.text_w-400(href='' title='')= numberReviews
+					h5=title
+					+ratingAndReviews(rating, numberReviews, ratingAndReviewPosition)
 
 				if button
 					.article__button

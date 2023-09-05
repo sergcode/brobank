@@ -1,0 +1,12 @@
+-	var exchangeRateBlocks	=	{}
+
+mixin carousel-info-exchange-rate-block(exchangeRateBlocks)
+	.carousel-info__exchange-rate.row
+		each blockCurrency, i in exchangeRateBlocks.currency
+			.carousel-info__exchange-rate__block
+				span.text_middle.text_w-400.text_gray= blockCurrency
+				span.text_middle.text_w-400= exchangeRateBlocks.cost[i]
+				span.text_small.text_w-400&attributes({ 'class' : exchangeRateBlocks.arrowCostChange[i] })
+					=	exchangeRateBlocks.costChange[i]
+					if i !== 2
+						+svg('arrow-course')

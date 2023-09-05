@@ -1,0 +1,9 @@
+- var arrItemsText,	arrItemsImg = [];
+
+mixin carousel-info(arrItemsText, arrItemsImg)
+	.carousel-info__wrap.carousel-info_mb-32.row.row-cols-lg-2
+		each itemText, index in arrItemsText
+			.carousel-info__wrap__item
+				a.text_middle.text_w-400.border(href='' title='')!= itemText
+					img(src=`${baseDir}assets/img/${arrItemsImg}` alt='')
+

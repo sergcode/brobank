@@ -1,0 +1,5 @@
+mixin ratingAndReviews(rating, numberReviews, position)
+	p.rating-and-reviews.text_middle.text_w-400&attributes({'class' : position})
+		+svg('star')
+		span.text_small.text_w-400=rating
+		a.text_small.text_w-400(href='' title='')= numberReviews

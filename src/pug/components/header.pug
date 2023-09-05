@@ -1,16 +1,36 @@
 header.header
   .container
-    .row.row-cols-lg-2.justify-content_space-between.align-items-lg-center
+    .row.justify-content_space-between.align-items-lg-center
       a.navbar-brand(href="#" title="" role="banner")
-        span.text_white LOREMIPSUM.
-          span.text_blue Net
+        img(src=`${baseDir}assets/img/logo.svg` alt='')
 
       nav(role="navigation")
         ul
           li
-            a.active(href="#" role="link") Бизнес
-            a(href="#" role="link") О нас
-            a(href="#" role="link") Цены
-            a(href="#" role="link") Оформить заказ
+            a(href="#" role="link") Журнал
+          li
+            a(href="#" role="link") Карты
+          li
+            a(href="#" role="link") Кредиты
+          li
+            a(href="#" role="link") Займы
+          li
+            a(href="#" role="link") Ипотека
+          li
+            a(href="#" role="link") Вклады
+          li
+            a(href="#" role="link") РКО
+          li
+            a(href="#" role="link") Банкротство
+          li
+            a(href="#" role="link") Задать вопрос
+          li
+            a(href="#" role="link") Еще
+          li
+            a(href="#" role="link")
+              +svg('comparison')
+          li
+            a(href="#" role="link")
+              +svg('magnifier')
 
 

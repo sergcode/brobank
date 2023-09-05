@@ -1,0 +1,73 @@
+.journal-brobank {
+  &__block-links {
+    @include block-links();
+  }
+
+  &__block {
+    &__title {
+      padding-bottom: 22.5px;
+
+      h3 {
+        line-height: 36px;
+      }
+    }
+
+    &__list {
+      &__wrap {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        background-color: $white-default;
+
+        & + .journal-brobank__block__list__wrap {
+          margin-top: 20.10px;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          z-index: 0;
+          top: 50%;
+          left: 50%;
+          width: calc(100% + 20px);
+          height: calc(100% + 20px);
+          padding: 0;
+          transform: translate(-50%, -50%);
+          border-radius: 8px;
+          box-shadow: transparent 0 0 0 0, transparent 0 0 0 0;
+          background-color: $white-default;
+          transition: box-shadow 0.2s ease;
+        }
+
+        &:hover {
+          z-index: 2;
+          &:before {
+            box-shadow:  0 2px 5px -1px $black-rgba-two, 0 1px 3px -1px $black-rgba-three;
+          }
+        }
+
+        img {
+          z-index: 1;
+          width: 64px;
+          height: 64px;
+        }
+
+        &__text {
+          z-index: 1;
+          padding-left: 12px;
+
+          p {
+            &:first-child {
+              @include shortenText();
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &_pb-40 {
+    padding-bottom: 40px;
+  }
+}

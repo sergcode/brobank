@@ -1,7 +1,15 @@
 .ready-made-solutions {
-  ul {
-    &:nth-child(n + 5) {
+  &__list {
+    &:nth-child(n + 6) {
       margin-top: 32px;
+    }
+
+    ul {
+      li {
+        &:not(:first-child) {
+          padding-top: 12px;
+        }
+      }
     }
   }
 }

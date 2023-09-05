@@ -1,0 +1,36 @@
+-	var arrPathImgs, arrTitles,	arrRatings, arrNumberReviews = []
+
+mixin best-offers-block(arrPathImgs, arrTitles,	arrRatings, arrNumberReviews, arrCreditLimitSums, arrInterestRate, arrWithoutInterests, arrCosts, button, classModifiers)
+
+	each pathImg, index in arrPathImgs
+		.best-offers__block
+			.best-offers__wrap&attributes({'class' : classModifiers})
+				.best-offers__wrap__header
+					img(src=`${baseDir}assets/img/${pathImg}` alt='')
+					div.best-offers__wrap__header_center
+						h5=arrTitles[index]
+						+ratingAndReviews(arrRatings[index], arrNumberReviews[index])
+
+				.best-offers__wrap__body
+					.row.row-cols-lg-6.justify-content_space-between
+						.best-offers__wrap__body__text-block
+							p.text_middle.text_gray Кред. лимит
+							p.text_middle=`${arrCreditLimitSums[index]} ₽`
+
+						.best-offers__wrap__body__text-block
+							p.text_middle.text_gray Проц. ставка
+							p.text_middle=`от ${arrInterestRate[index]}%`
+
+						.best-offers__wrap__body__text-block
+							p.text_middle.text_gray Без процентов
+							p.text_middle=arrWithoutInterests[index]
+
+						.best-offers__wrap__body__text-block
+							p.text_middle.text_gray Стоимость
+							p.text_middle=arrCosts[index]
+
+				.best-offers__wrap__footer
+					if button
+						.best-offers__wrap__button
+							button.button.button_yellow(type='button' role='button')=button
+

@@ -10,17 +10,29 @@
 @import 'mixins/grid';
 @import 'mixins/utilities';
 
+/* Manipulations with elements */
+@import 'readMore/readMore';
+
 /* Components */
 @import 'сomponents/button';
 @import 'сomponents/header';
 @import 'сomponents/footer';
 @import 'сomponents/separator';
 @import 'сomponents/article';
+@import 'сomponents/rating-and-reviews';
+@import 'сomponents/tabs';
+@import 'сomponents/modals/modal';
 
 /* Main */
 @import 'home/home';
-@import 'ready-made-solutions/ready-made-solutions';
-@import 'about-our-service/about-our-service';
-@import 'our-experts/our-experts';
+@import 'main-screen/main-screen';
+@import 'carousel-info/carousel-info';
+@import 'journal-brobank/journal-brobank';
+@import 'best-offers/best-offers';
 @import 'bank-assistance/bank-assistance';
+@import 'our-experts/our-experts';
+@import 'about-our-service/about-our-service';
+@import 'ready-made-solutions/ready-made-solutions';
+
+
 

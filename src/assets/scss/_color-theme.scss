@@ -5,7 +5,7 @@ $white-default: #fff; // section journal bg
 //$white-three: #F8F8F8;
 
 // Black
-$black-default: #3D3D3D; // text
+$black-default: #3D3D3D; // BASE-09 text
 $black-one: #000;
 //$black-two: #6F6D7B;
 //$black-three: #2A2B30;
@@ -14,8 +14,8 @@ $black-one: #000;
 
 // Gray
 $gray-default: #B8BDC2; // input label
-$gray-one: #898E93; // text
-$gray-two: #E0E4E9; // input border
+$gray-one: #898E93; // BASE-07 text
+$gray-two: #E0E4E9; // BASE-03 input border
 $gray-three: #F1F4F7; // section journal border block, bg button
 $gray-four: #A5A9AD; // BASE-06 section news small text
 $gray-five: #CFD4D9; // BASE-04
@@ -25,7 +25,7 @@ $gray-six: #e6e9ec;
 //$gray-nine: #C3C3C3;
 
 // Yellow
-$yellow-default: #FEDD2E; // button
+$yellow-default: #FEDD2E; // BASE / PRIMARY button
 $yellow-one: #F1D22A; // button hover
 $yellow-two: #E0C11C; // button active
 $yellow-three: #FBF4DA; // card background
@@ -46,7 +46,7 @@ $blue-eight: #266DC2; // Цвет Газпромбанк
 $green-default: #34B41F; // text
 
 // Red
-$red-default: #E03C25; // text
+$red-default: #E03C25; // SUPPORT-02 text
 $red-one: #ff0200; // Цвет Youtube
 $red-two: #EF3124; // Цвет Альфа-Банк
 
@@ -62,9 +62,10 @@ $orange-one: #ff7800;
 //$gray-rgba-one: rgba(204, 214, 228, .6);
 
 // Black-rgba
-//$black-rgba-one: rgba(16, 16, 29, 0.9);
-//$black-rgba-two: rgba(0, 0, 0, .25);
-//$black-rgba-three: rgba(0, 0, 0, .08);
+$black-rgba-default: rgba(61, 61, 61, 0.6);
+$black-rgba-one: rgba(0,23,46,.1);
+$black-rgba-two: rgba(50, 50, 93, 0.25);
+$black-rgba-three:rgba(0, 0, 0, 0.3);
 //$black-rgba-four: rgba(40, 40, 40, 0.5);
 //$black-rgba-five: rgba(0, 0, 0, 0.4);
 //$black-rgba-six: rgba(0, 0, 0, .24);

@@ -1,26 +1,22 @@
-'use strict';
-
 (function($) {
   let $lastScrollTop = 0
 
   $(window).on('scroll', function() {
     const $positionScroll = $(this).scrollTop(),
-      $navbar = $('header')
+          $navbar = $('header')
 
-    if ($positionScroll > 100) {
-      $navbar.addClass('header_fixed-hidden')
+    if ($navbar.offset().top > 76) {
+      $navbar.addClass("top-nav-collapse");
 
-      setTimeout(() => {
-        $navbar.addClass('header_fixed-visible')
-      }, 100)
+      if ($positionScroll > $lastScrollTop) {
+        $navbar.addClass("scrollDown");
 
-    } else if ($positionScroll === 0) {
-      $navbar.add('header_absolute-visible')
-      $navbar.removeClass('header_fixed-hidden')
-      setTimeout(() => {
-        $navbar.removeClass('header_absolute-visible')
-        $navbar.removeClass('header_fixed-visible')
-      }, 300)
+      } else {
+        $navbar.removeClass('scrollDown');
+      }
+
+    } else {
+      $navbar.removeClass("top-nav-collapse");
     }
 
     $lastScrollTop = $positionScroll

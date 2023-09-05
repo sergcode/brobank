@@ -1,0 +1,5 @@
+mixin titleAndButton(title, buttonName, buttonColor)
+	.row.row_flex-nowrap.justify-content_space-between
+		h2=title
+		div
+			button.button&attributes({ 'class' : buttonColor })(type='button' role='button')=buttonName

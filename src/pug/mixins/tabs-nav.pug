@@ -1,0 +1,10 @@
+-	var arrButtonNames = []
+
+mixin tabs-nav(arrButtonNames)
+	.tabs__nav.justify-content_space-between
+		each buttonName, index in arrButtonNames
+			if index === 0
+				button.button.tabs__btn.tabs__btn_active= buttonName
+			else
+				button.button.tabs__btn= buttonName
+

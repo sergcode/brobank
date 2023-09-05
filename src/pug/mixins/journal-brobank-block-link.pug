@@ -1,0 +1,8 @@
+-	var	blockLinkNames,	blockLinkImgs = []
+
+mixin journal-brobank-block-link(blockLinkNames, blockLinkImgs)
+	each blockLinkName in blockLinkNames
+		.journal-brobank__block-links
+			a.text_middle.text_w-400.border(href='' title='')!= blockLinkName
+				img(src=`${baseDir}assets/img/${blockLinkImgs}` alt='')
+

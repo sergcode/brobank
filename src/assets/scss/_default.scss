@@ -30,7 +30,6 @@ body {
   font-style: normal;
   font-feature-settings: "kern" 1;
   font-kerning: normal;
-  letter-spacing: 0.015em;
   word-spacing: 0.001em;
   line-height: normal;
   -webkit-font-smoothing: antialiased; /* Chrome, Safari */
@@ -45,31 +44,49 @@ body {
   }
 }
 
-h1 {
-  font-size: 48px;
-  font-weight: bold;
-}
-
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0;
 }
 
+h1 {
+  font-size: 38px;
+  line-height: 2.85rem;
+}
+
 h2 {
   padding-bottom: 32px;
-  font-size: 38px;
+  font-size: 32px;
+}
+
+h1, h2 {
   font-weight: 600;
 }
 
 h3 {
-  padding-bottom: 16px;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 24px;
 }
 
 h4 {
+  padding-bottom: 16px;
+  font-size: 20px;
+}
+
+h3, h4 {
+  font-weight: 500;
+}
+
+h5 {
   padding-bottom: 12px;
   font-size: 16px;
+}
+
+h6 {
+  font-size: 18px;
+  line-height: 1.688em;
+}
+
+h5, h6 {
   font-weight: 400;
 }
 
@@ -98,7 +115,6 @@ a {
   font-size: 14px;
   text-decoration: none;
   color: $black-default;
-  letter-spacing: 0.1px;
 
   &:hover {
     color: $blue-three;
@@ -110,7 +126,7 @@ p {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 18px;
-  line-height: 140%;
+  line-height: 1.5em;
   color: $black-default;
 }
 
@@ -149,12 +165,6 @@ ul {
   margin-top: 0;
   margin-bottom: 0;
   list-style: none;
-
-  li {
-    &:not(:first-child) {
-      padding-top: 12px;
-    }
-  }
 
   h3 {
     & + li {
@@ -247,19 +257,23 @@ form {
   input,
   textarea,
   label,
+  select,
   a {
     font-size: 16px;
+  }
+
+  select {
+    font-weight: 400;
+    line-height: 24px;
+
+    option {
+      padding: 0;
+    }
   }
 }
 
 .border {
   padding: 16px 12px;
-  border: 1px solid $gray-three;
+  outline: 1px solid $gray-three;
   border-radius: 12px;
-}
-
-.star {
-  width: 16px;
-  height: 15.2px;
-  fill: $yellow-default;
 }

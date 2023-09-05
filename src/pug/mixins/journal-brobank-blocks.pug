@@ -1,0 +1,23 @@
+-	var	objBlocksLists	=	{};
+
+mixin journal-brobank-blocks(objBlocksLists)
+	.row.row-cols-lg-6
+
+		each objBlocks in objBlocksLists
+			- var count = 0;
+
+			.journal-brobank__block
+				.journal-brobank__block__title
+					h3= objBlocks.title
+
+				.journal-brobank__block__list
+
+					while objBlocks.itemsList.numberItemsList > count
+						a.journal-brobank__block__list__wrap(href='' title='Прочитать полностью...' target='_blank')
+							img(src=`${baseDir}assets/img/${objBlocks.itemsList.img[count]}` alt='')
+							.journal-brobank__block__list__wrap__text
+								p.text_middle.text_w-400=	objBlocks.itemsList.text[count]
+								p.text_small.text_gray.text_w-400!=	objBlocks.itemsList.dateTime[count]
+								- count++
+
+

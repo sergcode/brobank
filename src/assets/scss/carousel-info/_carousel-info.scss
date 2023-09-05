@@ -1,0 +1,62 @@
+.carousel-info {
+  &__wrap {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+
+    &__item {
+      @include block-links();
+    }
+  }
+
+  &__exchange-rate {
+    &.row {
+      margin-right: calc(-1.5rem * .5);
+      margin-left: calc(-1.5rem * .5);
+
+      & > * {
+        padding-right: calc(1.5rem * .5);
+        padding-left: calc(1.5rem * .5);
+      }
+    }
+
+    &__block {
+      span {
+        &:nth-child(2) {
+          padding-left: 4px;
+          padding-right: 6px;
+        }
+
+        svg {
+          width: 10.67px;
+          height: 10.67px;
+          margin-left: 4px;
+        }
+      }
+
+      &_increased {
+        color: $green-default;
+
+        svg {
+          transform: rotateX(180deg);
+          fill: $green-default;
+        }
+      }
+
+      &_decreased {
+        color: $red-default;
+
+        svg {
+          fill: $red-default;
+        }
+      }
+    }
+  }
+
+  &_pb-40 {
+    padding-bottom: 40px;
+  }
+
+  &_mb-32 {
+    margin-bottom: 32px;
+  }
+}

@@ -44,13 +44,11 @@
   }
 
   &_yellow {
-    border-color: $white-default;
-    background-color: $blue-two;
-    color: $white-default;
+    background-color: $yellow-default;
+    color: $black-default;
 
     &:hover {
-      border-color: $black-default;
-      background-color: $white-default;
+      background-color: $gray-three;
     }
   }
 
@@ -60,6 +58,52 @@
 
     &:hover {
       background-color: $yellow-default;
+    }
+  }
+
+  &__cross {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-left: auto;
+    padding: 0;
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.2s ease;
+
+    &:hover {
+      transform: scale(1.2);
+
+      &::before, &::after {
+        background-color: $red-default;
+      }
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      min-height: max-content;
+      max-height: max-content;
+      margin: auto;
+      border-radius: 10px;
+      background-color: $black-default;
+      transition: 0.2s ease;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
     }
   }
 }

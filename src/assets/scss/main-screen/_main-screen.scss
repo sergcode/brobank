@@ -1,0 +1,132 @@
+.main-screen {
+  &__title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+
+    h1 {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__img {
+    img {
+      width: 570px;
+      height: 280px;
+    }
+  }
+
+  &__filters {
+    padding-top: 32px;
+
+    form {
+      display: flex;
+      flex-wrap: nowrap;
+
+      &.row {
+        margin-right: calc(-1rem * .5);
+        margin-left: calc(-1rem * .5);
+
+        & > * {
+          padding-right: calc(1rem * .5);
+          padding-left: calc(1rem * .5);
+        }
+      }
+
+      fieldset {
+        display: flex;
+        width: 100%;
+
+        &.row {
+          margin-right: calc(-1rem * .5);
+          margin-left: calc(-1rem * .5);
+
+          & > * {
+            max-width: 100%;
+            padding-right: calc(1rem * .5);
+            padding-left: calc(1rem * .5);
+          }
+        }
+      }
+
+      button {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+    }
+
+    &__group {
+      position: relative;
+      height: 56px;
+
+      label {
+        position: absolute;
+        top: 6px;
+        left: 24px;
+        font-size: 13px;
+        font-weight: 400;
+        color: $gray-default;
+      }
+
+      select, input {
+        width: 100%;
+        height: 100%;
+        padding: 26px 48px 6px 16px;
+        border: 1px solid $gray-two;
+        border-radius: 8px;
+        transition: border 0.2s, box-shadow 0.2s;
+
+        &:focus {
+          border: 1px solid $yellow-default;
+          box-shadow: 0 0 0 1px $yellow-default;
+          box-shadow: 0 0 0 1px -moz-mac-focusring;
+          outline: none;
+        }
+      }
+    }
+
+    &__select {
+      position: relative;
+
+      select {
+        padding-left: 12px;
+        appearance: none;
+        -webkit-appearance: none; /* Safari и Chrome */
+        -moz-appearance: none; /* Mozilla */
+        -ms-appearance: none; /* IE */
+        cursor: pointer;
+
+        &::-ms-expand {
+          display: none;
+        }
+
+        &:focus ~ .main-screen__filters__select-arrow {
+          transform: translateY(-50%) rotate(90deg);
+        }
+      }
+    }
+
+    &__select-arrow {
+      position: absolute;
+      display: block;
+      top: 50%;
+      right: 23px;
+      width: 8px;
+      height: 14px;
+      background-image: url('#{$way-img}arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 8px 14px;
+      transform: translateY(-50%) rotate(-90deg);
+      transition: transform 0.2s ease;
+    }
+
+    &__btn {
+      max-width: 179px;
+      width: 100%;
+      height: 56px;
+    }
+  }
+}

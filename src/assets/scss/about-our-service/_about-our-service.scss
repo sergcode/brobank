@@ -23,7 +23,9 @@
     padding-top: 36px;
 
     p {
-
+      &.readMore__hidden-text {
+        @include shortenText(2, 48);
+      }
     }
   }
 }

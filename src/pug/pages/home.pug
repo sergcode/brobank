@@ -1,110 +1,427 @@
+- var classModifiers = []
+- var classesModArray = ['text_center', 'border']
+- var classesModArrayBestOffers = ['border']
+- var ratingAndReviewsJustifyContentCenter = 'rating-and-reviews_justify-content-center'
+
 main.home(role='main')
   .container
+    section.main-screen
+      .row.row-cols-lg-6
+        .main-screen__title
+          h1 Умный подбор<br>финансовых услуг
+          h6 Подберите лучшую карту, кредит, вклад, ипотеку.<br>Бесплатно, без комиссий и платежей
+
+        .main-screen__img
+          img(src=`${baseDir}assets/img/main-screen/img_desk.png` alt='')
+
+      .main-screen__filters
+        form#formFilters.row(action="" novalidate method="post" name="formFilters" autocomplete="off" role='form')
+          fieldset.row.row-cols-lg-3
+            .main-screen__filters__group.main-screen__filters__select
+              label(for='ImLookingFor') Я ищу
+              select#ImLookingFor(name='ImLookingFor' form='formFilters')
+                option(selected) Рефинансирование
+                option Кредитные карты
+                option Карты рассрочки
+                option Дебетовые карты
+                option Кредиты
+                option Автокредиты
+
+              .main-screen__filters__select-arrow
+
+            .main-screen__filters__group
+              label(for='creditLimit') Кредитный лимит
+              input#creditLimit(placeholder=" ₽" value='Любой' name="creditLimit[]" type="tel" form="formFilters")
+
+            .main-screen__filters__group.main-screen__filters__select
+              label(for='bank') Банк
+              select#bank(name='bank' form='formFilters')
+                option(selected) Любой
+                option Абсолют Банк
+                option Авангард Банк
+                option Ак Барс Банк
+                option Альфа Банк
+                option АТБ
+
+              .main-screen__filters__select-arrow
+
+            .main-screen__filters__group.main-screen__filters__select
+              label(for='cardDelivery') Доставка карты
+              select#cardDelivery(name='cardDelivery' form='formFilters')
+                option(selected) Не важно
+                option Курьером
+                option По почте
+                option В отделение банка
+                option Виртуальные
+
+              .main-screen__filters__select-arrow
+
+          .main-screen__filters__btn
+            button.button.button_yellow(name='show') Показать (159)
+
+    section.carousel-info
+      h2.carousel-info_pb-40 Здесь автослайдер от Word Press
+      +carousel-info(
+        [
+          'Кредитные<br>карты', 'Дебетовые<br>карты', 'Карты<br>рассрочки',
+          'Кредиты', 'Вклады', 'Ипотеки', 'Займы', 'Автокредиты'
+        ],
+        ['journal-brobank/money.png']
+      )
+
+      .row
+        +carousel-info-exchange-rate-block(
+          {
+            currency: ['USD', 'EUR', 'Ставка ЦБ РФ'],
+            cost: ['76.98', '83.49', '7.5%'],
+            costChange: [0.38, 0.71, null],
+            arrowCostChange: ['carousel-info__exchange-rate__block_increased', 'carousel-info__exchange-rate__block_decreased', null]
+          }
+        )
+
+        a.modal__button-show.text_middle.text_w-400.text_gray-two.ml_auto(data-modal='aboutAdvertisers') О рекламодателях
+
+    section.journal-brobank
+      +titleAndButton('Журнал Бробанк', 'Перейти в Журнал', 'button_gray')
+
+      .row.row-cols-lg-2.justify-content_space-between.journal-brobank_pb-40
+        +journal-brobank-block-link(
+          [
+            'Пособия<br>и выплаты', 'Пенсии', 'Санкции',
+            'Зарплата', 'Куда вложить<br>деньги', 'Аналитика'
+          ],
+          ['journal-brobank/money.png']
+        )
+
+
+      +journal-brobank-blocks(
+        {
+          blockNews: {
+            nameList: 'news',
+            title: 'Новости',
+            itemsList: {
+              numberItemsList: 5,
+              img:
+              [
+                'journal-brobank/news/img_news.png', 'journal-brobank/news/img_news-1.png', 'journal-brobank/news/img_news-2.png',
+                'journal-brobank/news/img_news-3.png', 'journal-brobank/news/img_news-4.png'
+              ],
+              text:
+              [
+                'Индексация денежного довольствия военнослужащим в 2023 году. Индексация денежного довольствия военнослужащим в 2023 году', 'Домклик проводит акцию «Двойная выгода»', 'Депутаты хотят ввести налоговый вычет для родителей школьников', 'Индексация денежного довольствия военнослужащим в 2023', 'Альфа-Банк повысил ставку по накопительному счету'
+              ],
+              dateTime:
+              [
+                '03.04.2023 <span>•</span> 23:07', '03.04.2023 <span>•</span> 23:07', '03.04.2023 <span>•</span> 23:07',
+                '03.04.2023 <span>•</span> 23:07', '03.04.2023 <span>•</span> 23:07'
+              ]
+            },
+          },
+          blockSpecialOffers: {
+            nameList: 'special-offers',
+            title: 'Спецпредложения',
+            itemsList: {
+              numberItemsList: 5,
+              img:
+              [
+                'journal-brobank/special-offers/img_news.png', 'journal-brobank/special-offers/img_news-1.png',
+                'journal-brobank/special-offers/img_news-2.png', 'journal-brobank/special-offers/img_news-3.png',
+                'journal-brobank/special-offers/img_news-4.png'
+              ],
+              text:
+              [
+                'Оформляйте карту Tinkoff Black и получайте бесплатное обслуживание', 'Газпромбанк: кешбэк-акция по дебетовой «Умной карте»', 'МТС Банк: оплачивайте связь МТС с экономией до 15%', 'Тинькофф компенсирует комиссию Сбера за пополнение своих счетов', '«Надо Денег» погасит ваш займ'
+              ],
+              dateTime:
+              [
+                '03.04.2023 <span>•</span> 23:07', '03.04.2023 <span>•</span> 23:07', '03.04.2023 <span>•</span> 23:07',
+                '03.04.2023 <span>•</span> 23:07', '03.04.2023 <span>•</span> 23:07'
+              ]
+            },
+          }
+        }
+      )
+
+    section.best-offers
+      +titleAndButton('Лучшие предложения', 'Показать все', 'button_gray')
+
+      .tabs
+        +tabs-nav([
+          'Кредитные карты',  'Кредиты', 'Дебетовые карты',
+          'Займы', 'Вклады', 'Рефинансирование',
+          'Автокредиты', 'РКО', 'Ипотека'
+        ])
+
+        .tabs__content
+          .tabs__pane.tabs__pane_show
+            .row.row_flex-nowrap.row_stretch.row-cols-lg-3.justify-content_space-between
+              +best-offers-block(
+                ['best-offers/img_card.png',
+                  'best-offers/img_card-1.png',
+                  'best-offers/img_card-2.png',
+                  'best-offers/img_card-3.png'
+                ],
+                ['Тинькофф Банк', 'Карта Kviku', 'Газпромбанк 180 дн.', '365 дней без %'],
+                ['3.6', '3.3', '3.5', '3.2'],
+                ['217 отзывов', '140 отзывов', '105 отзывов', '314 отзывов'],
+                ['700 000', '100 000', '1 000 000', '500 000'],
+                ['12', '10', '11,9', '11,99'],
+                ['до 12 мес.', '50 дней', '180 дней', 'до 365 дней'],
+                ['от 0 руб./год', '0 руб.', 'от 0 руб.', '0 руб.'],
+                'Оформить',
+                classesModArrayBestOffers
+              )
+
+          .tabs__pane
+            .row.row_flex-nowrap.row_stretch.row-cols-lg-3.justify-content_space-between
+              +best-offers-block(
+                ['best-offers/img_card.png',
+                  'best-offers/img_card-1.png',
+                  'best-offers/img_card-2.png',
+                  'best-offers/img_card-3.png'
+                ],
+                ['Содержимое 2...', 'Содержимое 2...',  'Содержимое 2...', 'Содержимое 2...'],
+                ['3.6', '3.3', '3.5', '3.2'],
+                ['217 отзывов', '140 отзывов', '105 отзывов', '314 отзывов'],
+                ['700 000', '100 000', '1 000 000', '500 000'],
+                ['12', '10', '11,9', '11,99'],
+                ['до 12 мес.', '50 дней', '180 дней', 'до 365 дней'],
+                ['от 0 руб./год', '0 руб.', 'от 0 руб.', '0 руб.'],
+                'Оформить',
+                classesModArrayBestOffers
+              )
+
+          .tabs__pane#content-3
+            .row.row_flex-nowrap.row_stretch.row-cols-lg-3.justify-content_space-between
+              +best-offers-block(
+                ['best-offers/img_card.png',
+                  'best-offers/img_card-1.png',
+                  'best-offers/img_card-2.png',
+                  'best-offers/img_card-3.png'
+                ],
+                ['Содержимое 3...','Содержимое 3...','Содержимое 3...','Содержимое 3...',],
+                ['3.6', '3.3', '3.5', '3.2'],
+                ['217 отзывов', '140 отзывов', '105 отзывов', '314 отзывов'],
+                ['700 000', '100 000', '1 000 000', '500 000'],
+                ['12', '10', '11,9', '11,99'],
+                ['до 12 мес.', '50 дней', '180 дней', 'до 365 дней'],
+                ['от 0 руб./год', '0 руб.', 'от 0 руб.', '0 руб.'],
+                'Оформить',
+                classesModArrayBestOffers
+              )
+
+          .tabs__pane#content-4
+            .row.row_flex-nowrap.row_stretch.row-cols-lg-3.justify-content_space-between
+              +best-offers-block(
+                ['best-offers/img_card.png',
+                  'best-offers/img_card-1.png',
+                  'best-offers/img_card-2.png',
+                  'best-offers/img_card-3.png'
+                ],
+                ['Содержимое 4...','Содержимое 4...','Содержимое 4...','Содержимое 4...',],
+                ['3.6', '3.3', '3.5', '3.2'],
+                ['217 отзывов', '140 отзывов', '105 отзывов', '314 отзывов'],
+                ['700 000', '100 000', '1 000 000', '500 000'],
+                ['12', '10', '11,9', '11,99'],
+                ['до 12 мес.', '50 дней', '180 дней', 'до 365 дней'],
+                ['от 0 руб./год', '0 руб.', 'от 0 руб.', '0 руб.'],
+                'Оформить',
+                classesModArrayBestOffers
+              )
+
+          .tabs__pane#content-5
+            .row.row_flex-nowrap.row_stretch.row-cols-lg-3.justify-content_space-between
+              +best-offers-block(
+                ['best-offers/img_card.png',
+                  'best-offers/img_card-1.png',
+                  'best-offers/img_card-2.png',
+                  'best-offers/img_card-3.png'
+                ],
+                ['Содержимое 5...', 'Содержимое 5...', 'Содержимое 5...', 'Содержимое 5...', ],
+                ['3.6', '3.3', '3.5', '3.2'],
+                ['217 отзывов', '140 отзывов', '105 отзывов', '314 отзывов'],
+                ['700 000', '100 000', '1 000 000', '500 000'],
+                ['12', '10', '11,9', '11,99'],
+                ['до 12 мес.', '50 дней', '180 дней', 'до 365 дней'],
+                ['от 0 руб./год', '0 руб.', 'от 0 руб.', '0 руб.'],
+                'Оформить',
+                classesModArrayBestOffers
+              )
+
+          .tabs__pane#content-6
+            .row.row_flex-nowrap.row_stretch.row-cols-lg-3.justify-content_space-between
+              +best-offers-block(
+                ['best-offers/img_card.png',
+                  'best-offers/img_card-1.png',
+                  'best-offers/img_card-2.png',
+                  'best-offers/img_card-3.png'
+                ],
+                ['Содержимое 6...', 'Содержимое 6...', 'Содержимое 6...', 'Содержимое 6...', ],
+                ['3.6', '3.3', '3.5', '3.2'],
+                ['217 отзывов', '140 отзывов', '105 отзывов', '314 отзывов'],
+                ['700 000', '100 000', '1 000 000', '500 000'],
+                ['12', '10', '11,9', '11,99'],
+                ['до 12 мес.', '50 дней', '180 дней', 'до 365 дней'],
+                ['от 0 руб./год', '0 руб.', 'от 0 руб.', '0 руб.'],
+                'Оформить',
+                classesModArrayBestOffers
+              )
+
+          .tabs__pane#content-7
+            .row.row_flex-nowrap.row_stretch.row-cols-lg-3.justify-content_space-between
+              +best-offers-block(
+                ['best-offers/img_card.png',
+                  'best-offers/img_card-1.png',
+                  'best-offers/img_card-2.png',
+                  'best-offers/img_card-3.png'
+                ],
+                ['Содержимое 7...', 'Содержимое 7...', 'Содержимое 7...', 'Содержимое 7...', ],
+                ['3.6', '3.3', '3.5', '3.2'],
+                ['217 отзывов', '140 отзывов', '105 отзывов', '314 отзывов'],
+                ['700 000', '100 000', '1 000 000', '500 000'],
+                ['12', '10', '11,9', '11,99'],
+                ['до 12 мес.', '50 дней', '180 дней', 'до 365 дней'],
+                ['от 0 руб./год', '0 руб.', 'от 0 руб.', '0 руб.'],
+                'Оформить',
+                classesModArrayBestOffers
+              )
+
+          .tabs__pane#content-8
+            .row.row_flex-nowrap.row_stretch.row-cols-lg-3.justify-content_space-between
+              +best-offers-block(
+                ['best-offers/img_card.png',
+                  'best-offers/img_card-1.png',
+                  'best-offers/img_card-2.png',
+                  'best-offers/img_card-3.png'
+                ],
+                ['Содержимое 8...', 'Содержимое 8...', 'Содержимое 8...', 'Содержимое 8...', ],
+                ['3.6', '3.3', '3.5', '3.2'],
+                ['217 отзывов', '140 отзывов', '105 отзывов', '314 отзывов'],
+                ['700 000', '100 000', '1 000 000', '500 000'],
+                ['12', '10', '11,9', '11,99'],
+                ['до 12 мес.', '50 дней', '180 дней', 'до 365 дней'],
+                ['от 0 руб./год', '0 руб.', 'от 0 руб.', '0 руб.'],
+                'Оформить',
+                classesModArrayBestOffers
+              )
+
+          .tabs__pane#content-9
+            .row.row_flex-nowrap.row_stretch.row-cols-lg-3.justify-content_space-between
+              +best-offers-block(
+                ['best-offers/img_card.png',
+                  'best-offers/img_card-1.png',
+                  'best-offers/img_card-2.png',
+                  'best-offers/img_card-3.png'
+                ],
+                ['Содержимое 9...', 'Содержимое 9...', 'Содержимое 9...', 'Содержимое 9...', ],
+                ['3.6', '3.3', '3.5', '3.2'],
+                ['217 отзывов', '140 отзывов', '105 отзывов', '314 отзывов'],
+                ['700 000', '100 000', '1 000 000', '500 000'],
+                ['12', '10', '11,9', '11,99'],
+                ['до 12 мес.', '50 дней', '180 дней', 'до 365 дней'],
+                ['от 0 руб./год', '0 руб.', 'от 0 руб.', '0 руб.'],
+                'Оформить',
+                classesModArrayBestOffers
+              )
+
     section.bank-assistance
-      .row.row_flex-nowrap.justify-content_space-between
-        h2 Помощь банков
-        .bank-assistance__button
-          button.button.button_gray(type='button' role='button') Показать все
+      +titleAndButton('Помощь банков', 'Показать все', 'button_gray')
 
       .row.row_flex-nowrap.row_stretch.row-cols-lg-2.justify-content_space-between
         +article-button(
           'bank-assistance/tinkofbank.svg',
           'Тинькофф Банк',
-          'star',
           '3.3',
           '138 отзывов',
           'Задать вопрос',
-          ['bank-assistance__wrap-logo', 'bank-assistance__tinkofbank', 'text_center', 'border']
+          ['bank-assistance__wrap-logo', 'bank-assistance__tinkofbank', classesModArray],
+          ratingAndReviewsJustifyContentCenter
         )
         +article-button(
           'bank-assistance/sberbank.svg',
           'Сбербанк',
-          'star',
           '3.3',
           '138 отзывов',
           'Задать вопрос',
-          ['bank-assistance__wrap-logo', 'bank-assistance__sberbank', 'text_center', 'border']
+          ['bank-assistance__wrap-logo', 'bank-assistance__sberbank', classesModArray],
+          ratingAndReviewsJustifyContentCenter
         )
         +article-button(
           'bank-assistance/alfabank.svg',
           'Альфа-Банк',
-          'star',
           '3.3',
           '138 отзывов',
           'Задать вопрос',
-          ['bank-assistance__wrap-logo', 'bank-assistance__alfabank', 'text_center', 'border']
+          ['bank-assistance__wrap-logo', 'bank-assistance__alfabank', classesModArray],
+          ratingAndReviewsJustifyContentCenter
         )
         +article-button(
           'bank-assistance/mtsbank.svg',
           'МТС Банк',
-          'star',
           '3.3',
           '138 отзывов',
           'Задать вопрос',
-          ['bank-assistance__wrap-logo', 'bank-assistance__mtsbank', 'text_center', 'border']
+          ['bank-assistance__wrap-logo', 'bank-assistance__mtsbank', classesModArray],
+          ratingAndReviewsJustifyContentCenter
         )
         +article-button(
           'bank-assistance/gazprombank.svg',
           'Газпромбанк',
-          'star',
           '3.3',
           '138 отзывов',
           'Задать вопрос',
-          ['bank-assistance__wrap-logo', 'bank-assistance__gazprombank', 'text_center', 'border']
+          ['bank-assistance__wrap-logo', 'bank-assistance__gazprombank', classesModArray],
+          ratingAndReviewsJustifyContentCenter
         )
         +article-button(
           'bank-assistance/rosbank.svg',
           'Росбанк',
-          'star',
           '3.3',
           '138 отзывов',
           'Задать вопрос',
-          ['bank-assistance__wrap-logo', 'bank-assistance__rosbank', 'text_center', 'border']
+          ['bank-assistance__wrap-logo', 'bank-assistance__rosbank', classesModArray],
+          ratingAndReviewsJustifyContentCenter
         )
 
-
     section.our-experts
-      .row.row_flex-nowrap.justify-content_space-between
-        h2 Наши эксперты
-        .our-experts__button
-          button.button.button_gray(type='button' role='button') Показать все
+      +titleAndButton('Наши эксперты', 'Показать все', 'button_gray')
 
       .row.row_flex-nowrap.row_stretch.row-cols-lg-2.justify-content_space-between
         +article(
           'our-experts/img_profil.png',
           'Трескова Клавдия',
           'Главный редактор',
-          ['text_center', 'border']
+          classesModArray
         )
         +article(
           'our-experts/img_profil-0.png',
           'Пихоцкая Ольга',
           'Главный журналист',
-          ['text_center', 'border']
+          classesModArray
         )
         +article(
           'our-experts/img_profil-1.png',
           'Исаев Юрий',
           'Финансовый аналитик',
-          ['text_center', 'border']
+          classesModArray
         )
         +article(
           'our-experts/img_profil-2.png',
           'Русанова Ирина',
           'Финансовый эксперт',
-          ['text_center', 'border']
+          classesModArray
         )
         +article(
           'our-experts/img_profil-3.png',
           'Кокош Елена',
           'Финансовый эксперт',
-          ['text_center', 'border']
+          classesModArray
         )
         +article(
           'our-experts/img_profil-4.png',
           'Попович Анна',
           'Специалист поддержки',
-          ['text_center', 'border']
+          classesModArray
         )
 
 
@@ -112,26 +429,23 @@ main.home(role='main')
       h2 О нашем сервисе
 
       .row.row-cols-lg-4.justify-content_space-between
-        .col
-          +article(
-            'about-our-service/img-advantages-1.png',
-            'Бробанк - не банк',
-            'Мы не выдаем кредиты и карты. Данный сервис создан чтобы помочь вам найти и сравнить самые выгодные условия по финансовым продуктам банков.'
-          )
+        +article(
+          'about-our-service/img-advantages-1.png',
+          'Бробанк - не банк',
+          'Мы не выдаем кредиты и карты. Данный сервис создан чтобы помочь вам найти и сравнить самые выгодные условия по финансовым продуктам банков.'
+        )
 
-        .col
-          +article(
-            'about-our-service/img-advantages-2.png',
-            'Независимый сервис сравнения',
-            'Мы не принадлежим ни одному банку, полностью свободны и представляем честное мнение для наших посетителей. Наш контент объективен и непредвзят.'
-          )
+        +article(
+          'about-our-service/img-advantages-2.png',
+          'Независимый сервис сравнения',
+          'Мы не принадлежим ни одному банку, полностью свободны и представляем честное мнение для наших посетителей. Наш контент объективен и непредвзят.'
+        )
 
-        .col
-          +article(
-            'about-our-service/img-advantages-3.png',
-            'Бесплатное использование',
-            'Мы не берем с вас денег за свои услуги, вся информация бесплатна. Бробанк это рекламно-поддерживаемый сервис с партнерскими ссылками.'
-          )
+        +article(
+          'about-our-service/img-advantages-3.png',
+          'Бесплатное использование',
+          'Мы не берем с вас денег за свои услуги, вся информация бесплатна. Бробанк это рекламно-поддерживаемый сервис с партнерскими ссылками.'
+        )
 
       .row.row-cols-lg-3.row_pt-36.justify-content_space-between
         .col
@@ -154,151 +468,160 @@ main.home(role='main')
             p.text_huge +100500
             p.text_middle Придумаем какой-то текст
 
-      .about-our-service__text
-        p.text_middle.text_w-400 Здесь вы найдете полную информацию о кредитном рынке, о действующих банковских предложениях и МФО. Можно сделать подбор кредитного продукта по банкам, провести предварительные расчеты и сразу подать онлайн-заявку на ее получение. Наша команда — специалисты с юридическим и финансовым образованием. Мы наполняем сервис качественной и актуальной информацией. Внимательно следим за изменениями рынка и новостями. Предоставляем информацию только по честным банкам, имеющим лицензию ЦБ РФ, которые работают в полном соответствии с действующим законодательством.
+      .about-our-service__text.readMore
+        p.text_middle.text_w-400.readMore__hidden-text Здесь вы найдете полную информацию о кредитном рынке, о действующих банковских предложениях и МФО. Можно сделать подбор кредитного продукта по банкам, провести предварительные расчеты и сразу подать онлайн-заявку на ее получение. Наша команда — специалисты с юридическим и финансовым образованием. Мы наполняем сервис качественной и актуальной информацией. Внимательно следим за изменениями рынка и новостями. Предоставляем информацию только по честным банкам, имеющим лицензию ЦБ РФ, которые работают в полном соответствии с действующим законодательством.
 
     section.ready-made-solutions(role='region')
       h2 Готовые решения
 
-      .row.row-cols-lg-5.justify-content_space-between
-        +list(
-          'Кредитные карты',
-          ['Кредитные карты без отказа',
-            'Лучшие кредитные карты',
-            'Для снятия наличных',
-            'С плохой кредитной историей',
-            'С доставкой на дом',
-            'Виртуальные кредитные карты',
-            'Кредитные карты в Москве',
-            'Кредитные карты онлайн'
-          ]
-        )
+      .row.row-cols-lg-2_5.justify-content_space-between
+        .ready-made-solutions__list
+          +list(
+            'Кредитные карты',
+            ['Кредитные карты без отказа',
+              'Лучшие кредитные карты',
+              'Для снятия наличных',
+              'С плохой кредитной историей',
+              'С доставкой на дом',
+              'Виртуальные кредитные карты',
+              'Кредитные карты в Москве',
+              'Кредитные карты онлайн'
+            ]
+          )
 
-        +list(
-          'Дебетовые карты',
-          [
-            'Лучшие дебетовые карты',
-            'С бесплатным обслуживанием',
-            'Дебетовые карты с кэшбэком',
-            'Моментальные',
-            'С процентом на остаток',
-            'Виртуальные дебетовые карты',
-            'С доставкой на дом',
-            'Дебетовые карты для детей'
-          ]
-        )
+        .ready-made-solutions__list
+          +list(
+            'Дебетовые карты',
+            [
+              'Лучшие дебетовые карты',
+              'С бесплатным обслуживанием',
+              'Дебетовые карты с кэшбэком',
+              'Моментальные',
+              'С процентом на остаток',
+              'Виртуальные дебетовые карты',
+              'С доставкой на дом',
+              'Дебетовые карты для детей'
+            ]
+          )
+        .ready-made-solutions__list
+          +list(
+            'Карты рассрочки',
+            [
+              'Лучшие карты рассрочки',
+              'Карты рассрочки без отказа',
+              'Карты с рассрочкой 24 месяца',
+              'Карты с рассрочкой 12 месяцев',
+              'Со снятием наличных',
+              'Карты рассрочки без процентов',
+              'Карты рассрочки с 18 лет',
+              'С доставкой на дом'
+            ]
+          )
 
-        +list(
-          'Карты рассрочки',
-          [
-            'Лучшие карты рассрочки',
-            'Карты рассрочки без отказа',
-            'Карты с рассрочкой 24 месяца',
-            'Карты с рассрочкой 12 месяцев',
-            'Со снятием наличных',
-            'Карты рассрочки без процентов',
-            'Карты рассрочки с 18 лет',
-            'С доставкой на дом'
-          ]
-        )
+        .ready-made-solutions__list
+          +list(
+            'Кредиты наличными',
+            [
+              'Кредит наличными на карту',
+              'Онлайн кредит наличными',
+              'С плохой кредитной историей',
+              'Кредит наличными без отказа',
+              'Кредит наличными без работы',
+              'Кредит наличными без справок',
+              'Кредит наличными по паспорту',
+              'Кредит под низкий процент'
+            ]
+          )
 
-        +list(
-          'Кредиты наличными',
-          [
-            'Кредит наличными на карту',
-            'Онлайн кредит наличными',
-            'С плохой кредитной историей',
-            'Кредит наличными без отказа',
-            'Кредит наличными без работы',
-            'Кредит наличными без справок',
-            'Кредит наличными по паспорту',
-            'Кредит под низкий процент'
-          ]
-        )
+        .ready-made-solutions__list
+          +list(
+            'Автокредиты',
+            [
+              'Лучшие автокредиты',
+              'Автокредит с плохой КИ',
+              'Автокредит без перв. взноса',
+              'Автокредит онлайн',
+              'Автокредит без справок',
+              'По двум документам',
+              'На подержанный авто',
+              'Автокредит под залог'
+            ]
+          )
 
-        +list(
-          'Автокредиты',
-          [
-            'Лучшие автокредиты',
-            'Автокредит с плохой КИ',
-            'Автокредит без перв. взноса',
-            'Автокредит онлайн',
-            'Автокредит без справок',
-            'По двум документам',
-            'На подержанный авто',
-            'Автокредит под залог'
-          ]
-        )
+        .ready-made-solutions__list
+          +list(
+            'Рефинансирование',
+            [
+              'Лучшие предложения',
+              'Под низкий процент',
+              'Рефинансирование с плохой КИ',
+              'Без подтверждения дохода',
+              'С просрочкой',
+              'Рефинансирование для физлиц',
+              'Рефинансирование кредиток',
+              'Рефинансирование займов'
+            ]
+          )
 
-        +list(
-          'Рефинансирование',
-          [
-            'Лучшие предложения',
-            'Под низкий процент',
-            'Рефинансирование с плохой КИ',
-            'Без подтверждения дохода',
-            'С просрочкой',
-            'Рефинансирование для физлиц',
-            'Рефинансирование кредиток',
-            'Рефинансирование займов'
-          ]
-        )
+        .ready-made-solutions__list
+          +list(
+            'Займы',
+            [
+              'Первый займ без процентов',
+              'Лучшие займы',
+              'Займы онлайн',
+              'Займы с плохой КИ на карту',
+              'Займы без отказа',
+              'Срочные займы',
+              'Займы по паспорту',
+              'Займы наличными'
+            ]
+          )
 
-        +list(
-          'Займы',
-          [
-            'Первый займ без процентов',
-            'Лучшие займы',
-            'Займы онлайн',
-            'Займы с плохой КИ на карту',
-            'Займы без отказа',
-            'Срочные займы',
-            'Займы по паспорту',
-            'Займы наличными'
-          ]
-        )
+        .ready-made-solutions__list
+          +list(
+            'Расчетные счета',
+            [
+              'РКО для ИП',
+              'РКО онлайн',
+              'РКО для ООО',
+              'Бесплатное РКО',
+              'Лучшее РКО',
+              'РКО с быстрым открытием',
+              'РКО для бизнеса',
+              'РКО для самозанятых'
+            ]
+          )
 
-        +list(
-          'Расчетные счета',
-          [
-            'РКО для ИП',
-            'РКО онлайн',
-            'РКО для ООО',
-            'Бесплатное РКО',
-            'Лучшее РКО',
-            'РКО с быстрым открытием',
-            'РКО для бизнеса',
-            'РКО для самозанятых'
-          ]
-        )
+        .ready-made-solutions__list
+          +list(
+            'Ипотека',
+            [
+              'Без первоначального взноса',
+              'Самая выгодная ипотека',
+              'Ипотека на вторичное жилье',
+              'Сельская ипотека',
+              'На строительство дома',
+              'Ипотека для молодой семьи',
+              'С плохой кредитной историей',
+              'Ипотека с господдержкой'
+            ]
+          )
 
-        +list(
-          'Ипотека',
-          [
-            'Без первоначального взноса',
-            'Самая выгодная ипотека',
-            'Ипотека на вторичное жилье',
-            'Сельская ипотека',
-            'На строительство дома',
-            'Ипотека для молодой семьи',
-            'С плохой кредитной историей',
-            'Ипотека с господдержкой'
-          ]
-        )
-
-        +list(
-          'Вклады',
-          [
-            'Рейтинг вкладов',
-            'Вклады для пенсионеров',
-            'Накопительные счета',
-            'Вклады в Санкт-Петербурге',
-            'Вклады в Москве',
-            'Вклады в долларах',
-            'Вклады с пополнением',
-            'Валютные вклады'
-          ]
-        )
+        .ready-made-solutions__list
+          +list(
+            'Вклады',
+            [
+              'Рейтинг вкладов',
+              'Вклады для пенсионеров',
+              'Накопительные счета',
+              'Вклады в Санкт-Петербурге',
+              'Вклады в Москве',
+              'Вклады в долларах',
+              'Вклады с пополнением',
+              'Валютные вклады'
+            ]
+          )
 
 
 

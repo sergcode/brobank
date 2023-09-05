@@ -1,11 +1,9 @@
 .bank-assistance {
   .article {
-    &:not(:first-child) {
-      padding-left: 10px;
-    }
-
-    &:not(:last-child) {
-      padding-right: 10px;
+    &__text {
+      h5 {
+        padding-bottom: 4px;
+      }
     }
   }
 
@@ -52,6 +50,4 @@
       background-color: $gray-three;
     }
   }
-
-
 }
